@@ -10,7 +10,7 @@ const getJsonData = function (filename) {
 
 const getJsonDataById = function (filename, id) {
     var file = path.join(basePathToData, filename);
-    return JSON.parse(fs.readFileSync(file, 'utf-8')).find((obj) => obj.id == id);
+    return JSON.parse(fs.readFileSync(file, 'utf-8')).find((obj) => Number(obj.id) === Number(id));
 };
 
 const saveJsonData = function (filename, newData) {
