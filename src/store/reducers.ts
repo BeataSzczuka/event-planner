@@ -1,55 +1,51 @@
-import { combineReducers } from "redux"
-import * as actionTypes from "./actionTypes"
+import { combineReducers } from 'redux';
+import * as actionTypes from './actionTypes';
 
 const initialEventsState: EventsState = {
-  events: []
-}
+  events: [],
+};
 
 const initialEventState: EventState = {
-    event: undefined
-}
+  event: undefined,
+};
 
 const eventsReducer = (
-    state: EventsState = initialEventsState,
-    action: EventsAction
-  ): EventsState => {
-    switch (action.type) {
-        case actionTypes.GET_EVENTS:
-            return {
-                ...state,
-                events: action.events,
-            }
-    }
-    return state
+  state: EventsState = initialEventsState,
+  action: EventsAction,
+): EventsState => {
+  switch (action.type) {
+    case actionTypes.GET_EVENTS:
+      return {
+        ...state,
+        events: action.events,
+      };
   }
-  
-  const eventReducer = (
-    state: EventState = initialEventState,
-    action: EventAction
-  ): EventState => {
-    console.log("here")
-    switch (action.type) {
-        case actionTypes.GET_EVENT:
-            console.log(action)
-            return {
-                ...state,
-                event: action.event,
-            }
-        case actionTypes.ADD_EVENT:
-            const newEvent: IEvent = {
-                id: Math.random(),
-                title: action.event.title
-            }
-            return {
-                ...state // ???
-            }
-    }
-    console.log(state)
-    return state
+  return state;
+};
+
+const eventReducer = (state: EventState = initialEventState, action: EventAction): EventState => {
+  console.log('here');
+  switch (action.type) {
+    case actionTypes.GET_EVENT:
+      console.log(action);
+      return {
+        ...state,
+        event: action.event,
+      };
+    case actionTypes.ADD_EVENT:
+      const newEvent: IEvent = {
+        id: Math.random(),
+        title: action.event.title,
+      };
+      return {
+        ...state, // ???
+      };
   }
-  
+  console.log(state);
+  return state;
+};
 
 export default combineReducers({
-    eventsReducer: eventsReducer,
-    eventReducer: eventReducer,
+  eventsReducer: eventsReducer,
+  eventReducer: eventReducer,
 });

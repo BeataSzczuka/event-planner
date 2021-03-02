@@ -9,41 +9,40 @@ const getJsonData = function (filename) {
 };
 
 const getJsonDataById = function (filename, id) {
-    var file = path.join(basePathToData, filename);
-    return JSON.parse(fs.readFileSync(file, 'utf-8')).find((obj) => Number(obj.id) === Number(id));
+  var file = path.join(basePathToData, filename);
+  return JSON.parse(fs.readFileSync(file, 'utf-8')).find((obj) => Number(obj.id) === Number(id));
 };
 
 const saveJsonData = function (filename, newData) {
-    var file = path.join(basePathToData, filename);
+  var file = path.join(basePathToData, filename);
 
-    fs.readFile(file, (error, content) => {
-        if (error) return {error: "Something went wrong"};
-        var parsedData = JSON.parse(content);
-        parsedData.push(newData);
-        fs.writeFile(file, JSON.stringify(parsedData), () => ({error: "Something went wrong"}) )
+  fs.readFile(file, (error, content) => {
+    if (error) return { error: 'Something went wrong' };
+    var parsedData = JSON.parse(content);
+    parsedData.push(newData);
+    fs.writeFile(file, JSON.stringify(parsedData), () => ({ error: 'Something went wrong' }));
+  });
 
-    })
-
-    return newData;
-  };
+  return newData;
+};
 
 exports.getEvents = function (request, response) {
   var data = getJsonData('data.json');
-  setTimeout(function() {
+  setTimeout(function () {
     return response.send(data);
   }, 100);
 };
 
 exports.getEventById = function (request, response) {
-    var data = getJsonDataById('data.json', request.params.uid);
-    setTimeout(function() {
-      return response.send(data);
-    }, 100);
-  };
+  var data = getJsonDataById('data.json', request.params.uid);
+  setTimeout(function () {
+    return response.send(data);
+  }, 100);
+};
 
 exports.postEvent = function (request, response) {
-    var data = saveJsonData('data.json', request.body);
-    setTimeout(function() {
-        return response.send(data);
-    }, 100);
+  var data = saveJsonData('data.json', request.body);
+  setTimeout(function () {
+    return response.send(data);
+  }, 100);
 };

@@ -5,27 +5,27 @@ import { getEvents } from '../../store/actionCreators';
 import './Events.css';
 
 type EventsStateType = {
-  eventsReducer: EventsState
-}
+  eventsReducer: EventsState;
+};
 
 interface EventsProps {
-  events: IEvent[]
-  getEvents: typeof getEvents
+  events: IEvent[];
+  getEvents: typeof getEvents;
 }
 
-
 class Events extends Component<EventsProps, EventsStateType> {
-
   componentDidMount() {
     this.props.getEvents();
   }
 
   render() {
-    return(
+    return (
       <div className="Events">
         Events
         <div>
-          {this.props.events.map((event: IEvent, i) => (<div key={i}>{event.title}</div>) )}
+          {this.props.events.map((event: IEvent, i) => (
+            <div key={i}>{event.title}</div>
+          ))}
         </div>
       </div>
     );
@@ -34,19 +34,16 @@ class Events extends Component<EventsProps, EventsStateType> {
 
 const mapStateToProps = (state: EventsStateType) => {
   return {
-    events: state.eventsReducer.events
+    events: state.eventsReducer.events,
   };
 };
 
 const mapDispatchToProps = (dispatch: any) =>
   bindActionCreators(
     {
-      getEvents: getEvents
+      getEvents: getEvents,
     },
-    dispatch
+    dispatch,
   );
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Events);
+export default connect(mapStateToProps, mapDispatchToProps)(Events);
