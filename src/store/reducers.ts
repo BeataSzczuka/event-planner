@@ -7,6 +7,7 @@ const initialEventsState: EventsState = {
 
 const initialEventState: EventState = {
   event: undefined,
+  message: undefined,
 };
 
 const eventsReducer = (
@@ -17,31 +18,30 @@ const eventsReducer = (
     case actionTypes.GET_EVENTS:
       return {
         ...state,
-        events: action.events,
+        events: action.payload,
       };
   }
   return state;
 };
 
 const eventReducer = (state: EventState = initialEventState, action: EventAction): EventState => {
-  console.log('here');
   switch (action.type) {
     case actionTypes.GET_EVENT:
-      console.log(action);
       return {
         ...state,
-        event: action.event,
+        event: action.payload,
       };
     case actionTypes.ADD_EVENT:
-      const newEvent: IEvent = {
-        id: Math.random(),
-        title: action.event.title,
-      };
       return {
-        ...state, // ???
+        ...state,
+        message: action.payload,
+      };
+    case actionTypes.CLEAR_MESSAGE:
+      return {
+        ...state,
+        message: action.payload,
       };
   }
-  console.log(state);
   return state;
 };
 

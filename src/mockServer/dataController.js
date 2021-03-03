@@ -19,7 +19,11 @@ const saveJsonData = function (filename, newData) {
   fs.readFile(file, (error, content) => {
     if (error) return { error: 'Something went wrong' };
     var parsedData = JSON.parse(content);
-    parsedData.push(newData);
+    let id = 0;
+    parsedData.forEach((elem) => {
+      if (elem.id > id) id = elem.id + 1;
+    });
+    parsedData.push({ id, ...newData });
     fs.writeFile(file, JSON.stringify(parsedData), () => ({ error: 'Something went wrong' }));
   });
 

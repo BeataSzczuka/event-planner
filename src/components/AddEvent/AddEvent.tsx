@@ -1,34 +1,50 @@
 import React, { Component } from 'react';
-import { Button, MenuItem, TextField } from '@material-ui/core';
+import { Button, MenuItem, Snackbar, TextField } from '@material-ui/core';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 
+import { addEvent, clearMessage } from '../../store/actionCreators';
 import './AddEvent.css';
+
+type AddEventStateType = {
+  eventReducer: EventState;
+};
+
+interface AddEventProps {
+  message: string | undefined;
+  addEvent: typeof addEvent;
+  clearMessage: typeof clearMessage;
+}
+
 const phoneRegExp = /^((\+\d{1,3}(-| )?\(?\d\)?(-| )?\d{1,3})|(\(?\d{2,3}\)?))(-| )?(\d{3,4})(-| )?(\d{4})(( x| ext)\d{1,5}){0,1}$/;
 
-class AddEvent extends Component {
+class AddEvent extends Component<AddEventProps, AddEventStateType> {
   typesOfEvent = ['Sport', 'Kultura', 'Zdrowie', 'Inne'];
 
   showErrors = (error: string | undefined, touched: boolean | undefined) =>
     error && touched && <div className="input-feedback">{error}</div>;
+
+  initialValues: IEventForm = {
+    title: '',
+    description: '',
+    datetime: '',
+    eventType: '',
+    phoneNumber: '',
+    email: '',
+    place: '',
+  };
 
   render() {
     return (
       <div className="AddEvent">
         <h1>Dodawanie wydarzenia</h1>
         <Formik
-          initialValues={{
-            title: '',
-            description: '',
-            datetime: '',
-            eventType: '',
-            phoneNumber: '',
-            email: '',
-            place: '',
-          }}
-          onSubmit={async (values) => {
-            await new Promise((resolve) => setTimeout(resolve, 500));
-            alert(JSON.stringify(values, null, 2));
+          initialValues={this.initialValues}
+          onSubmit={async (values, { resetForm }) => {
+            await this.props.addEvent(values);
+            resetForm();
           }}
           validationSchema={Yup.object().shape({
             title: Yup.string().required('To pole jest wymagane'),
@@ -178,19 +194,44 @@ class AddEvent extends Component {
                   onClick={handleReset}
                   disabled={isSubmitting}
                 >
-                  Reset
+                  Wyczyść
                 </Button>
 
                 <Button type="submit" color="primary" variant="contained" disabled={isSubmitting}>
-                  Submit
+                  Zapisz wydarzenie
                 </Button>
               </form>
             );
           }}
         </Formik>
+        <Snackbar
+          anchorOrigin={{
+            vertical: 'top',
+            horizontal: 'right',
+          }}
+          open={!!this.props.message}
+          onClose={() => this.props.clearMessage()}
+          autoHideDuration={6000}
+          message={this.props.message}
+        />
       </div>
     );
   }
 }
 
-export default AddEvent;
+const mapStateToProps = (state: AddEventStateType) => {
+  return {
+    message: state.eventReducer.message,
+  };
+};
+
+const mapDispatchToProps = (dispatch: any) =>
+  bindActionCreators(
+    {
+      addEvent,
+      clearMessage,
+    },
+    dispatch,
+  );
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddEvent);

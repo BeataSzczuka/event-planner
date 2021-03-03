@@ -43,3 +43,7 @@ button.MuiButton-containedSecondary:hover {
 button:hover {
   transform: scale(1.1);
 }
+
+div.MuiSelect-select {
+  text-align: left;
+}
