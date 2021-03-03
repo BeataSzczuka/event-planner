@@ -1,5 +1,5 @@
 export const routes = {
   events: '/events',
-  event: '/events/:id',
+  event: '/event/:id',
   addEvent: '/add-event',
 };

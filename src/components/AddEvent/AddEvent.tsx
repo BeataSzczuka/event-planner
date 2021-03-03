@@ -45,7 +45,7 @@ class AddEvent extends Component<AddEventProps, AddEventStateType> {
           initialValues={this.initialValues}
           onSubmit={async (values, { resetForm }) => {
             await this.props.addEvent(values);
-            //   resetForm();
+            resetForm();
           }}
           validationSchema={Yup.object().shape({
             title: Yup.string().required('To pole jest wymagane'),

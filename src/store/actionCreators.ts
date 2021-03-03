@@ -51,12 +51,6 @@ export function getEvents() {
 export function getEvent(id: number) {
   return (dispatch: EventDispatchType) => {
     axios.get(baseAPIUrl.concat(`event/${id}`)).then((response: AxiosResponse) => {
-      // if (!!response.data.image) {
-      //   axios.get(baseAPIUrl.concat(`image/${response.data.image}`)).then((res: AxiosResponse) => {
-      //     response.data.image
-      //   } )
-
-      // }
       dispatch({ type: actionTypes.GET_EVENT, payload: response.data });
     });
   };

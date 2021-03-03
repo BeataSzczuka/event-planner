@@ -4,6 +4,7 @@ import { routes } from '../../routes';
 
 import AddEvent from '../AddEvent/AddEvent';
 import Events from '../Events/Events';
+import Event from '../Event/Event';
 import './App.css';
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
     <div className="App">
       <Switch>
         <Route path={routes.addEvent} render={() => <AddEvent />} />
+        <Route path={routes.event} render={({ match }) => <Event id={match.params.id} />} />
         <Route path={routes.events} render={() => <Events />} />
         <Redirect to={routes.events} />
       </Switch>
