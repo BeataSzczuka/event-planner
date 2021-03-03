@@ -1,5 +1,8 @@
 import React from 'react';
-import { Route, Switch, withRouter } from 'react-router-dom';
+import { Redirect, Route, Switch, withRouter } from 'react-router-dom';
+import { routes } from '../../routes';
+
+import AddEvent from '../AddEvent/AddEvent';
 import Events from '../Events/Events';
 import './App.css';
 
@@ -7,7 +10,9 @@ function App() {
   return (
     <div className="App">
       <Switch>
-        <Route render={() => <Events />} />
+        <Route path={routes.addEvent} render={() => <AddEvent />} />
+        <Route path={routes.events} render={() => <Events />} />
+        <Redirect to={routes.events} />
       </Switch>
     </div>
   );

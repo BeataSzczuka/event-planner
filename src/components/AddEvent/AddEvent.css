@@ -1,0 +1,45 @@
+.AddEvent {
+  width: 80%;
+  max-width: 900px;
+  margin: auto;
+}
+
+form .text-input {
+  margin: 1em;
+}
+
+h1 {
+  color: var(--cinnamon);
+}
+.error fieldset {
+  border-color: #f44336;
+}
+
+.error p {
+  color: #f44336;
+}
+
+button.MuiButton-contained {
+  color: whitesmoke;
+  margin: 1em;
+}
+
+button.MuiButton-containedPrimary {
+  background-color: var(--cinnamon);
+}
+
+button.MuiButton-containedPrimary:hover {
+  background-color: var(--cinnamon);
+}
+
+button.MuiButton-containedSecondary {
+  background-color: #b7b7b7;
+}
+
+button.MuiButton-containedSecondary:hover {
+  background-color: #b7b7b7;
+}
+
+button:hover {
+  transform: scale(1.1);
+}

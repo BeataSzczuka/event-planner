@@ -1,26 +1,25 @@
 interface IEvent {
-    id: number
-    title: string
+  id: number;
+  title: string;
 }
 
 type EventsState = {
-    events: IEvent[]
-}
+  events: IEvent[];
+};
 
 type EventState = {
-    event: IEvent | undefined
-}
+  event: IEvent | undefined;
+};
 
 type EventAction = {
-    type: string
-    event: IEvent
-}
+  type: string;
+  event: IEvent;
+};
 
 type EventsAction = {
-    type: string
-    events: IEvent[]
-}
-
+  type: string;
+  events: IEvent[];
+};
 
 type EventDispatchType = (args: EventAction) => EventAction;
 

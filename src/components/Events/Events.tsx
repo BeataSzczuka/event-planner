@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
+import { Button } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+
 import { getEvents } from '../../store/actionCreators';
 import './Events.css';
+import { routes } from '../../routes';
 
 type EventsStateType = {
   eventsReducer: EventsState;
@@ -21,12 +25,17 @@ class Events extends Component<EventsProps, EventsStateType> {
   render() {
     return (
       <div className="Events">
-        Events
+        Wydarzenia
         <div>
           {this.props.events.map((event: IEvent, i) => (
             <div key={i}>{event.title}</div>
           ))}
         </div>
+        <Link to={routes.addEvent}>
+          <Button variant="contained" color="primary">
+            Dodaj
+          </Button>
+        </Link>
       </div>
     );
   }
