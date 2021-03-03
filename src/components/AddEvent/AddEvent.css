@@ -47,3 +47,18 @@ button:hover {
 div.MuiSelect-select {
   text-align: left;
 }
+
+div.uploadImage {
+  text-align: left;
+  margin: 1em;
+}
+div.uploadImage span:last-of-type {
+  padding-left: 1em;
+}
+
+.uploadImage.error > span {
+  color: #f44336;
+}
+.uploadImage.error > label {
+  border-color: #f44336;
+}

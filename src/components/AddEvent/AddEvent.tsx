@@ -34,6 +34,7 @@ class AddEvent extends Component<AddEventProps, AddEventStateType> {
     phoneNumber: '',
     email: '',
     place: '',
+    image: null,
   };
 
   render() {
@@ -44,7 +45,7 @@ class AddEvent extends Component<AddEventProps, AddEventStateType> {
           initialValues={this.initialValues}
           onSubmit={async (values, { resetForm }) => {
             await this.props.addEvent(values);
-            resetForm();
+            //   resetForm();
           }}
           validationSchema={Yup.object().shape({
             title: Yup.string().required('To pole jest wymagane'),
@@ -56,6 +57,7 @@ class AddEvent extends Component<AddEventProps, AddEventStateType> {
               .required('To pole jest wymagane'),
             email: Yup.string().email('Niepoprawny adres email').required('To pole jest wymagane'),
             place: Yup.string().required('To pole jest wymagane'),
+            image: Yup.mixed().required('To pole jest wymagane'),
           })}
         >
           {(props) => {
@@ -68,6 +70,7 @@ class AddEvent extends Component<AddEventProps, AddEventStateType> {
               handleBlur,
               handleSubmit,
               handleReset,
+              setFieldValue,
             } = props;
 
             return (
@@ -120,6 +123,29 @@ class AddEvent extends Component<AddEventProps, AddEventStateType> {
                   }
                   helperText={errors.description && touched.description ? errors.description : ''}
                 />
+
+                <div
+                  className={errors.image && touched.image ? 'uploadImage error' : 'uploadImage'}
+                >
+                  <Button variant="outlined" component="label">
+                    Dodaj zdjęcie
+                    <input
+                      type="file"
+                      hidden
+                      accept="image/*"
+                      onChange={(e: any) => {
+                        if (!!e.currentTarget.files[0]) {
+                          setFieldValue('image', e.currentTarget.files[0]);
+                        }
+                      }}
+                    />
+                  </Button>
+                  {values.image !== null ? (
+                    <span>{values.image.name}</span>
+                  ) : (
+                    <span>Nie wybrano zdjęcia</span>
+                  )}
+                </div>
 
                 <TextField
                   fullWidth

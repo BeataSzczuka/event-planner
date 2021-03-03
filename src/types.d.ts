@@ -7,6 +7,7 @@ interface IEvent {
   phoneNumber: string;
   email: string;
   place: string;
+  image: any;
 }
 
 interface IEventForm {
@@ -17,6 +18,7 @@ interface IEventForm {
   phoneNumber: string;
   email: string;
   place: string;
+  image: any;
 }
 
 type EventsState = {

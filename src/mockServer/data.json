@@ -1,1 +1,35 @@
-[{"id":1,"title":"Zdrowe odżywianie - szkolenie","description":"Spotkanie poprowadzi dietetyk. Opowie on o zasadach zdrowego odżywiania, których należy przestrzegać. Wydarzenie potrwa 2 godziny.","datetime":"2021-05-20T12:00","eventType":"Zdrowie","phoneNumber":"123456787","email":"dietetyk@example.com","place":"Rybnik"},{"id":2,"title":"Mecz piłki nożnej","description":"W tej rozgrywce zmierzą się dwie drużyny: A i B. Po ostatniej wygranej drużyny B, jest ona zdecydowanym faworytem.","datetime":"2021-03-18T09:00","eventType":"Sport","phoneNumber":"+48567321123","email":"trener@mecz.pl","place":"Stadion Miejski w Gliwicach"},{"id":3,"title":"Koncert chóru dziecięcego","description":"Podczas koncertu wystąpią uczniowie szkoły podstawowej. Ze względu na okoliczności, uczestnictwo w koncercie jest możliwe tylko za pośrednictwem strony internetowej www.koncerty.pl.","datetime":"2021-03-20T18:30","eventType":"Kultura","phoneNumber":"927324153","email":"biuro@koncerty.pl","place":"online"},{"id":4,"title":"Wydarzenie","description":"g","datetime":"2021-03-03T13:13","eventType":"Zdrowie","phoneNumber":"794316035","email":"beataszczuka@o2.pl","place":"a"},{"id":4,"title":"tttttt","description":"g","datetime":"2021-03-03T13:13","eventType":"Zdrowie","phoneNumber":"794316035","email":"beataszczuka@o2.pl","place":"g"},{"id":4,"title":"h","description":"h","datetime":"2021-03-03T13:14","eventType":"Zdrowie","phoneNumber":"794316035","email":"beataszczuka@o2.pl","place":"g"},{"id":4,"title":"dodane","description":"f","datetime":"2021-03-26T13:14","eventType":"Zdrowie","phoneNumber":"794316035","email":"beataszczuka@o2.pl","place":"ddd"},{"id":4,"title":"wydarzenie1","description":"1","datetime":"2021-03-03T13:20","eventType":"Zdrowie","phoneNumber":"222222222","email":"ssssss@ss.ss","place":"e"}]
+[
+  {
+    "id": 1,
+    "title": "Zdrowe odżywianie - szkolenie",
+    "description": "Spotkanie poprowadzi dietetyk. Opowie on o zasadach zdrowego odżywiania, których należy przestrzegać. Wydarzenie potrwa 2 godziny.",
+    "datetime": "2021-05-20T12:00",
+    "eventType": "Zdrowie",
+    "phoneNumber": "123456787",
+    "email": "dietetyk@example.com",
+    "place": "Rybnik",
+    "image": "healthy-food.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Mecz piłki nożnej",
+    "description": "W tej rozgrywce zmierzą się dwie drużyny: A i B. Po ostatniej wygranej drużyny B, jest ona zdecydowanym faworytem.",
+    "datetime": "2021-03-18T09:00",
+    "eventType": "Sport",
+    "phoneNumber": "+48567321123",
+    "email": "trener@mecz.pl",
+    "place": "Stadion Miejski w Gliwicach",
+    "image": "football.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Koncert chóru dziecięcego",
+    "description": "Podczas koncertu wystąpią uczniowie szkoły podstawowej. Ze względu na okoliczności, uczestnictwo w koncercie jest możliwe tylko za pośrednictwem strony internetowej www.koncerty.pl.",
+    "datetime": "2021-03-20T18:30",
+    "eventType": "Kultura",
+    "phoneNumber": "927324153",
+    "email": "biuro@koncerty.pl",
+    "place": "online",
+    "image": "choir.jpg"
+  }
+]

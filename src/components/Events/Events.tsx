@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { getEvents } from '../../store/actionCreators';
+import { APIUrlImage, getEvents } from '../../store/actionCreators';
 import './Events.css';
 import { routes } from '../../routes';
 
@@ -28,7 +28,10 @@ class Events extends Component<EventsProps, EventsStateType> {
         Wydarzenia
         <div>
           {this.props.events.map((event: IEvent, i) => (
-            <div key={i}>{event.title}</div>
+            <div key={i}>
+              {event.title}
+              <img src={`${APIUrlImage}${event.image}`} alt="event" />
+            </div>
           ))}
         </div>
         <Link to={routes.addEvent}>

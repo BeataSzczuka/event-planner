@@ -45,8 +45,17 @@ exports.getEventById = function (request, response) {
 };
 
 exports.postEvent = function (request, response) {
-  var data = saveJsonData('data.json', request.body);
+  const tempPath = request.file.path;
+  const targetPath = path.join(__dirname, './uploads/'.concat(request.file.originalname));
+  fs.rename(tempPath, targetPath, (err) => console.log(err));
+
+  var data = saveJsonData('data.json', { ...request.body, image: request.file.originalname });
   setTimeout(function () {
     return response.send(data);
   }, 100);
+};
+
+exports.getImage = function (req, res) {
+  var imagePath = './uploads/'.concat(req.params.uimg);
+  res.sendFile(path.join(__dirname, imagePath));
 };
