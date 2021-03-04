@@ -4,13 +4,23 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import './EventBrief.css';
 import { APIUrlImage } from '../../store/actionCreators';
-import { faMapMarkedAlt, faTheaterMasks } from '@fortawesome/free-solid-svg-icons';
+import {
+  faFootballBall,
+  faHeartbeat,
+  faMapMarkedAlt,
+  faTheaterMasks,
+} from '@fortawesome/free-solid-svg-icons';
 
 interface EventBriefProps {
   event: IEvent;
 }
 
 function EventBrief({ event }: EventBriefProps) {
+  const selectIcon = () => {
+    if (event.eventType === 'Kultura') return <FontAwesomeIcon icon={faTheaterMasks} />;
+    if (event.eventType === 'Sport') return <FontAwesomeIcon icon={faFootballBall} />;
+    if (event.eventType === 'Zdrowie') return <FontAwesomeIcon icon={faHeartbeat} />;
+  };
   return (
     <Card className="card-root">
       <CardHeader className="header" title={event.title} />
@@ -26,7 +36,7 @@ function EventBrief({ event }: EventBriefProps) {
           {event.place}
         </div>
         <div className="detail">
-          <FontAwesomeIcon icon={faTheaterMasks} />
+          {selectIcon()}
           {event.eventType}
         </div>
       </CardContent>

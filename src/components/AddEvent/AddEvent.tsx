@@ -9,6 +9,8 @@ import { addEvent, clearMessage } from '../../store/actionCreators';
 import './AddEvent.css';
 import { routes } from '../../routes';
 import { Link } from 'react-router-dom';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 type AddEventStateType = {
   eventReducer: EventState;
@@ -243,7 +245,10 @@ class AddEvent extends Component<AddEventProps, AddEventStateType> {
           message={this.props.message}
         />
         <Link to={routes.events}>
-          <Button>Wroć do listy wydarzeń</Button>
+          <Button id="back-btn">
+            <FontAwesomeIcon icon={faArrowLeft} />
+            Wroć do listy wydarzeń
+          </Button>
         </Link>
       </div>
     );

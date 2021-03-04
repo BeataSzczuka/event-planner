@@ -12,10 +12,10 @@ form .text-input {
   margin: 1em 0;
 }
 
-h1 {
+.AddEvent h1 {
   width: 100%;
   margin: 0;
-  padding: 1em;
+  padding: 1em 0;
   color: whitesmoke;
   font-weight: 100;
   font-size: 4vh;

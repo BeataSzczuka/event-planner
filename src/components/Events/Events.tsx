@@ -34,7 +34,14 @@ class Events extends Component<EventsProps, EventsStateType> {
         </div>
         <div className="cards-container">
           {this.props.events.map((event: IEvent, i) => (
-            <Link to={`/event/${event.id}`} key={i} className="card">
+            <Link
+              to={`/event/${event.id}`}
+              key={i}
+              onClick={() => {
+                window.scrollTo(0, 0);
+              }}
+              className="card"
+            >
               <EventBrief event={event} />
               <div className="card-hover">
                 <span>
@@ -44,6 +51,7 @@ class Events extends Component<EventsProps, EventsStateType> {
               </div>
             </Link>
           ))}
+          {this.props.events.length === 0 && <div id="no-events">Brak wydarzeń</div>}
         </div>
         <div id="add-event-container">
           <span>

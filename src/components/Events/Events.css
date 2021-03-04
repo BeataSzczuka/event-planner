@@ -28,16 +28,11 @@ a {
   font-weight: 200;
 }
 
-img {
-  height: 100px;
-}
-
 .cards-container {
   width: 90%;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   justify-content: center;
 }
 
@@ -80,4 +75,10 @@ img {
 #add-event-container h2,
 #add-event-container h3 {
   font-weight: 300;
+}
+
+#no-events {
+  padding: 2em;
+  font-size: larger;
+  color: rgb(102, 97, 97);
 }

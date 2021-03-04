@@ -2,12 +2,14 @@ a {
   text-decoration: none;
 }
 
-img {
+.EventBrief img {
   height: 100px;
 }
 
 .card-root {
   width: 300px;
+  display: grid;
+  height: 100%;
 }
 
 .header {
@@ -37,4 +39,5 @@ img {
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-end;
+  height: fit-content;
 }

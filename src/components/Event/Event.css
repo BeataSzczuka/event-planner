@@ -1,7 +1,93 @@
 a {
   text-decoration: none;
 }
+.Event {
+  margin-bottom: 3em;
+}
+.Event #header {
+  background-color: var(--cinnamon);
+  margin: 0;
+  padding: 0.5em;
+  color: whitesmoke;
+  font-weight: 100;
+  font-size: large;
+  text-align: left;
+  padding-left: 1em;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  text-shadow: 10px 5px 8px #652e2e;
+}
 
-img {
-  height: 100px;
+.Event h1 {
+  font-weight: 100;
+  font-size: 4vh;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  text-shadow: 1px 2px 10px #ecbda1;
+  color: var(--cinnamon);
+}
+
+.Event img {
+  max-height: 50vh;
+  max-width: 100%;
+}
+
+.event-details > div {
+  color: var(--cinnamon);
+  padding: 20px;
+  font-size: larger;
+}
+
+.event-details div span {
+  padding-left: 10px;
+  font-weight: 400;
+  color: #4c3e3e;
+}
+
+.section-title:first-child {
+  width: fit-content;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 1.5em;
+  font-weight: 400;
+  border-bottom: 1px solid;
+  padding: 0;
+  padding-bottom: 0.5em;
+  padding-top: 1.5em;
+
+  color: black;
+  margin-bottom: 0.5em;
+  letter-spacing: 4px;
+}
+
+#description {
+  width: 70vw;
+  margin: auto;
+  text-align: center;
+  color: #4c3e3e;
+  padding: 20px 0;
+}
+
+.contact > div {
+  color: #4c3e3e;
+  padding: 1em 0;
+}
+
+.contact > div > span:first-child {
+  padding-right: 10px;
+  color: var(--cinnamon);
+  font-weight: 500;
+}
+
+.contact > div > span:last-child {
+  font-weight: 400;
+}
+
+#back-btn {
+  margin: 3em 1em;
+}
+
+#back-btn svg {
+  padding-right: 5px;
+  font-size: smaller;
 }
