@@ -7,6 +7,9 @@ import { bindActionCreators } from 'redux';
 import { APIUrlImage, getEvents } from '../../store/actionCreators';
 import './Events.css';
 import { routes } from '../../routes';
+import EventBrief from '../EventBrief/EventBrief';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
 
 type EventsStateType = {
   eventsReducer: EventsState;
@@ -25,20 +28,41 @@ class Events extends Component<EventsProps, EventsStateType> {
   render() {
     return (
       <div className="Events">
-        Wydarzenia
-        <div>
+        <div className="header">
+          <h1>Wydarzenia</h1>
+          <h2>zobacz jakie wydarzenia odbędą się w najbliższym czasie</h2>
+        </div>
+        <div className="cards-container">
           {this.props.events.map((event: IEvent, i) => (
-            <div key={i}>
-              {event.title}
-              <img src={`${APIUrlImage}${event.image}`} alt="event" />
-            </div>
+            <Link to={`/event/${event.id}`} key={i} className="card">
+              <EventBrief event={event} />
+              <div className="card-hover">
+                <span>
+                  Dowiedz się więcej
+                  <FontAwesomeIcon icon={faAngleDoubleRight} />
+                </span>
+              </div>
+            </Link>
           ))}
         </div>
-        <Link to={routes.addEvent}>
-          <Button variant="contained" color="primary">
-            Dodaj
-          </Button>
-        </Link>
+        <div id="add-event-container">
+          <span>
+            <h2>
+              Organizujesz wydarzenie i chcesz, żeby dowiedziało się o nim jak najwięcej osób?
+            </h2>
+            <h3>Dobrze trafiłeś! Wypełnij formularz i dodaj wydarzenie</h3>
+          </span>
+          <Link
+            to={routes.addEvent}
+            onClick={() => {
+              window.scrollTo(0, 0);
+            }}
+          >
+            <Button variant="contained" color="primary">
+              Dodaj
+            </Button>
+          </Link>
+        </div>
       </div>
     );
   }

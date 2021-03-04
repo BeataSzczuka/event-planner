@@ -1,9 +1,14 @@
+import { Button } from '@material-ui/core';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import { routes } from '../../routes';
 import { getEvent } from '../../store/actionCreators';
 import './Event.css';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 type EventStateType = {
   eventReducer: EventState;
@@ -27,6 +32,12 @@ class Event extends Component<EventProps, EventStateType> {
     if (this.props.event) {
       return (
         <div className="Event">
+          <Link to={routes.events}>
+            <Button>
+              <FontAwesomeIcon icon={faArrowLeft} />
+              Back
+            </Button>
+          </Link>
           <div>{this.props.event.title}</div>
         </div>
       );

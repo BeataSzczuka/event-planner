@@ -1,0 +1,40 @@
+a {
+  text-decoration: none;
+}
+
+img {
+  height: 100px;
+}
+
+.card-root {
+  width: 300px;
+}
+
+.header {
+  color: var(--cinnamon);
+}
+
+.media {
+  height: 0;
+  padding-top: 56.25%;
+}
+
+.detail > *:first-child {
+  padding-right: 0.5em;
+}
+
+.detail {
+  width: fit-content;
+  padding: 5px;
+  border: 1px solid var(--cinnamon);
+  border-radius: 4px;
+  color: var(--cinnamon);
+  font-weight: 200;
+  margin: 5px;
+}
+
+#details {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+}

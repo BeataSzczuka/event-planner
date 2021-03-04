@@ -1,15 +1,28 @@
 .AddEvent {
+  padding-bottom: 3em;
+}
+
+form {
   width: 80%;
   max-width: 900px;
   margin: auto;
 }
 
 form .text-input {
-  margin: 1em;
+  margin: 1em 0;
 }
 
 h1 {
-  color: var(--cinnamon);
+  width: 100%;
+  margin: 0;
+  padding: 1em;
+  color: whitesmoke;
+  font-weight: 100;
+  font-size: 4vh;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  text-shadow: 10px 5px 8px #652e2e;
+  background-color: #bd7042;
 }
 .error fieldset {
   border-color: #f44336;
@@ -40,7 +53,7 @@ button.MuiButton-containedSecondary:hover {
   background-color: #b7b7b7;
 }
 
-button:hover {
+form button:hover {
   transform: scale(1.1);
 }
 
@@ -50,10 +63,10 @@ div.MuiSelect-select {
 
 div.uploadImage {
   text-align: left;
-  margin: 1em;
+  margin: 1em 0;
 }
 div.uploadImage span:last-of-type {
-  padding-left: 1em;
+  padding-left: 10px;
 }
 
 .uploadImage.error > span {

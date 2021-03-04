@@ -7,6 +7,8 @@ import * as Yup from 'yup';
 
 import { addEvent, clearMessage } from '../../store/actionCreators';
 import './AddEvent.css';
+import { routes } from '../../routes';
+import { Link } from 'react-router-dom';
 
 type AddEventStateType = {
   eventReducer: EventState;
@@ -40,7 +42,7 @@ class AddEvent extends Component<AddEventProps, AddEventStateType> {
   render() {
     return (
       <div className="AddEvent">
-        <h1>Dodawanie wydarzenia</h1>
+        <h1>dodaj wydarzenie</h1>
         <Formik
           initialValues={this.initialValues}
           onSubmit={async (values, { resetForm }) => {
@@ -240,6 +242,9 @@ class AddEvent extends Component<AddEventProps, AddEventStateType> {
           autoHideDuration={6000}
           message={this.props.message}
         />
+        <Link to={routes.events}>
+          <Button>Wroć do listy wydarzeń</Button>
+        </Link>
       </div>
     );
   }

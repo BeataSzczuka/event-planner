@@ -1,7 +1,83 @@
+.Events {
+  background: rgb(189 69 0 / 1%);
+  margin-bottom: 5em;
+}
+
 a {
   text-decoration: none;
 }
 
+.Events > .header {
+  padding: 2em;
+  color: whitesmoke;
+  background-color: #bd7042;
+}
+
+.Events > .header h1 {
+  margin: 0;
+  padding: 0.5em;
+  color: whitesmoke;
+  font-weight: 100;
+  font-size: 5vw;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  text-shadow: 10px 5px 8px #652e2e;
+}
+
+.Events > .header h2 {
+  font-weight: 200;
+}
+
 img {
   height: 100px;
+}
+
+.cards-container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  margin: 1em;
+  position: relative;
+}
+
+.card-hover {
+  position: absolute;
+  top: 0;
+  backdrop-filter: brightness(0.35);
+  height: 100%;
+  width: 100%;
+  display: none;
+}
+
+.card-hover > span {
+  color: white;
+  font-size: larger;
+  line-height: 300px;
+  letter-spacing: 1px;
+}
+.card-hover span > *:last-child {
+  padding-left: 10px;
+  font-size: smaller;
+}
+
+.card:hover .card-hover {
+  display: block;
+}
+
+#add-event-container {
+  box-shadow: 3px 3px 7px 0px #dacccc;
+  width: 80%;
+  margin: auto;
+  padding: 2em;
+}
+
+#add-event-container h2,
+#add-event-container h3 {
+  font-weight: 300;
 }
