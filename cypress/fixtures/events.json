@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1,
+    "title": "Zdrowe odżywianie - szkolenie",
+    "description": "Spotkanie poprowadzi dietetyk. Opowie on o zasadach zdrowego odżywiania, których należy przestrzegać. Wydarzenie potrwa 2 godziny.",
+    "datetime": "2021-05-20T12:00",
+    "eventType": "Zdrowie",
+    "phoneNumber": "123456787",
+    "email": "dietetyk@example.com",
+    "place": "Rybnik",
+    "image": "image.jpg"
+  }
+]

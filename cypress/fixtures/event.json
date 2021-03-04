@@ -1,0 +1,11 @@
+{
+  "id": 1,
+  "title": "test",
+  "description": "description",
+  "datetime": "2021-05-20T12:00",
+  "eventType": "Inne",
+  "phoneNumber": "123456787",
+  "email": "mail@example.com",
+  "place": "unknown",
+  "image": "image.jpg"
+}

@@ -67,7 +67,7 @@ class Events extends Component<EventsProps, EventsStateType> {
             }}
           >
             <Button variant="contained" color="primary">
-              Dodaj
+              Dodaj wydarzenie
             </Button>
           </Link>
         </div>

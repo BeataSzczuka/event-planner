@@ -47,7 +47,7 @@ class Event extends Component<EventProps, EventStateType> {
       return (
         <div className="Event">
           <div id="header">Szczegóły wydarzenia</div>
-          <div>
+          <div id="about-event">
             <h1>{this.props.event.title}</h1>
             <img src={`${APIUrlImage}${this.props.event.image}`} alt="ss" />
 
@@ -105,7 +105,7 @@ class Event extends Component<EventProps, EventStateType> {
         </div>
       );
     } else {
-      return <div>Event not found</div>;
+      return <div>Nie znaleziono wydarzenia</div>;
     }
   }
 }
