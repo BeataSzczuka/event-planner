@@ -16,7 +16,7 @@ type AddEventStateType = {
   eventReducer: EventState;
 };
 
-interface AddEventProps {
+export interface AddEventProps {
   message: string | undefined;
   addEvent: typeof addEvent;
   clearMessage: typeof clearMessage;
@@ -24,7 +24,7 @@ interface AddEventProps {
 
 const phoneRegExp = /^((\+\d{1,3}(-| )?\(?\d\)?(-| )?\d{1,3})|(\(?\d{2,3}\)?))(-| )?(\d{3,4})(-| )?(\d{4})(( x| ext)\d{1,5}){0,1}$/;
 
-class AddEvent extends Component<AddEventProps, AddEventStateType> {
+export class AddEvent extends Component<AddEventProps, AddEventStateType> {
   typesOfEvent = ['Sport', 'Kultura', 'Zdrowie', 'Inne'];
 
   showErrors = (error: string | undefined, touched: boolean | undefined) =>

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { APIUrlImage, getEvents } from '../../store/actionCreators';
+import { getEvents } from '../../store/actionCreators';
 import './Events.css';
 import { routes } from '../../routes';
 import EventBrief from '../EventBrief/EventBrief';
@@ -15,12 +15,12 @@ type EventsStateType = {
   eventsReducer: EventsState;
 };
 
-interface EventsProps {
+export interface EventsProps {
   events: IEvent[];
   getEvents: typeof getEvents;
 }
 
-class Events extends Component<EventsProps, EventsStateType> {
+export class Events extends Component<EventsProps, EventsStateType> {
   componentDidMount() {
     this.props.getEvents();
   }
@@ -66,7 +66,7 @@ class Events extends Component<EventsProps, EventsStateType> {
               window.scrollTo(0, 0);
             }}
           >
-            <Button variant="contained" color="primary">
+            <Button variant="contained" id="add-event-btn" color="primary">
               Dodaj wydarzenie
             </Button>
           </Link>

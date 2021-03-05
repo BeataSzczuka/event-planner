@@ -11,7 +11,7 @@ import {
   faTheaterMasks,
 } from '@fortawesome/free-solid-svg-icons';
 
-interface EventBriefProps {
+export interface EventBriefProps {
   event: IEvent;
 }
 
@@ -24,7 +24,7 @@ function EventBrief({ event }: EventBriefProps) {
   return (
     <Card className="card-root">
       <CardHeader className="header" title={event.title} />
-      <CardContent>
+      <CardContent id="description">
         <Typography variant="body2" color="textSecondary" component="p">
           {event.description}
         </Typography>

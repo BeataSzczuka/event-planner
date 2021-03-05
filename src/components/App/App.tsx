@@ -7,7 +7,7 @@ import Events from '../Events/Events';
 import Event from '../Event/Event';
 import './App.css';
 
-function App() {
+export function App() {
   return (
     <div className="App">
       <Switch>

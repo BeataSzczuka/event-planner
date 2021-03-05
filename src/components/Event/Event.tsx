@@ -22,13 +22,13 @@ type EventStateType = {
   eventReducer: EventState;
 };
 
-interface EventProps {
+export interface EventProps {
   event: IEvent | undefined;
   getEvent: typeof getEvent;
   id: string | undefined;
 }
 
-class Event extends Component<EventProps, EventStateType> {
+export class Event extends Component<EventProps, EventStateType> {
   componentDidMount() {
     const eventId = this.props.id;
     if (eventId) {
